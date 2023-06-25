@@ -1,12 +1,10 @@
 import React from 'react';
-import Event from '../Event';
-import useAxios from 'axios-hooks';
+import Event from '../Event/Event';
+import { useEventsContext } from '../../context/EventsContext';
 
 export default function EventList() {
-  const [{ data: events, loading }] = useAxios('/api/events');
+  const { events } = useEventsContext();
   console.log({ events });
-
-  if (loading) return <p>Loading...</p>;
 
   return (
     <div>

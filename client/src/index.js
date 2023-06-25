@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './app';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { EventsProvider } from './modules';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <EventsProvider>
+      <RouterProvider router={router} />
+    </EventsProvider>
   </React.StrictMode>
 );

@@ -1,2 +1,2 @@
-export { default as Layout } from './Layout';
-export { EventsList } from './Events';
+export { default as Layout } from './Layout/Layout';
+export { EventsList, EventsProvider } from './Events';
