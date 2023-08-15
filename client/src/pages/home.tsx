@@ -1,28 +1,27 @@
 import { Grid, Paper, SxProps } from '@mui/material';
-import EventsList from '../modules/Events/components/EventsList/EventsList';
-import EventForm from '../modules/Events/components/EventForm/EventForm';
+import { EventsList, NewEventForm } from '../modules/Events/components';
 import React from 'react';
 
 const paperStyle: SxProps = {
-  p: 2,
+  px: 2,
+  py: 4,
   display: 'flex',
   flexDirection: 'column',
-  minHeight: '50vh',
 };
 
 export default function Home(): React.ReactElement {
   return (
     <Grid container spacing={3}>
       {/* EVENTS */}
-      <Grid item xs={12} md={6} lg={6}>
-        <Paper sx={paperStyle}>
+      <Grid item xs={12} md={7} lg={7}>
+        <Paper sx={{ ...paperStyle, minHeight: '500px' }}>
           <EventsList />
         </Paper>
       </Grid>
       {/* NEW EVENT FORM */}
-      <Grid item xs={12} md={6} lg={6}>
+      <Grid item xs={12} md={5} lg={5}>
         <Paper sx={paperStyle}>
-          <EventForm />
+          <NewEventForm />
         </Paper>
       </Grid>
     </Grid>

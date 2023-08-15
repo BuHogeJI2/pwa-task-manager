@@ -1,2 +1,2 @@
 export { default as EventsList } from './EventsList/EventsList';
-export { default as EventForm } from './EventForm/EventForm';
+export { default as NewEventForm } from './NewEventForm/NewEventForm';

@@ -4,16 +4,16 @@ import { TEvent } from '../types';
 
 type TEventContextType = {
   getEvents: () => Promise<TEvent[]>;
-  createEvent: (event: TEvent) => Promise<TEvent[]>;
-  deleteEvent: (id: string) => Promise<TEvent[]>;
-  updateEvent: (event: any) => Promise<TEvent[]>;
+  createEvent: (event: TEvent) => Promise<TEvent>;
+  deleteEvent: (id: string) => Promise<TEvent>;
+  updateEvent: (event: any) => Promise<TEvent>;
 };
 
 const EventContext = createContext<TEventContextType>({
   getEvents: () => Promise.resolve([]),
-  createEvent: () => Promise.resolve([]),
-  deleteEvent: () => Promise.resolve([]),
-  updateEvent: () => Promise.resolve([]),
+  createEvent: () => Promise.resolve({} as TEvent),
+  deleteEvent: () => Promise.resolve({} as TEvent),
+  updateEvent: () => Promise.resolve({} as TEvent),
 });
 
 export default function EventsProvider({

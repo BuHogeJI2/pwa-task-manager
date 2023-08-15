@@ -1,7 +1,7 @@
 export type TEvent = {
-  _id: string;
+  _id?: string;
   name: string;
   description: string;
   date: string;
-  completed: boolean;
+  completed?: boolean;
 };

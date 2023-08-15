@@ -1,2 +1,3 @@
-export { EventsList, EventForm } from './components';
+export { EventsList, NewEventForm } from './components';
 export { default as EventsProvider } from './context/EventsContext';
+export * from './types';
