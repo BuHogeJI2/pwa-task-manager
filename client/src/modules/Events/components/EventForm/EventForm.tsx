@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 
-export default function EventForm() {
+export default function EventForm(): React.ReactElement {
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
   const [description, setDescription] = useState('');
 
-  const handleSubmit = event => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const newEvent = {

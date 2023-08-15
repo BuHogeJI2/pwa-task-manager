@@ -1,7 +1,11 @@
-import { Link, Typography } from '@mui/material';
+import { Link, SxProps, Typography } from '@mui/material';
 import React from 'react';
 
-export default function Copyright(props) {
+interface ICopyRightProps {
+  sx?: SxProps;
+}
+
+export default function Copyright(props: ICopyRightProps): React.ReactElement {
   return (
     <Typography
       variant="body2"

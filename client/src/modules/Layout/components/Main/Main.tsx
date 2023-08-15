@@ -1,8 +1,10 @@
 import React from 'react';
 import { Box, Container, Grid, Paper, Toolbar } from '@mui/material';
 import Copyright from './Copyright';
+import EventsList from '../../../Events/components/EventsList/EventsList';
+import EventForm from '../../../Events/components/EventForm/EventForm';
 
-export default function Main({ children }) {
+export default function Main(): React.ReactElement {
   return (
     <Box
       component="main"
@@ -16,8 +18,8 @@ export default function Main({ children }) {
       <Toolbar />
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <Grid container spacing={3}>
-          {/* Chart */}
-          <Grid item xs={12} md={8} lg={9}>
+          {/* EVENTS */}
+          <Grid item xs={12} md={6} lg={6}>
             <Paper
               sx={{
                 p: 2,
@@ -26,11 +28,11 @@ export default function Main({ children }) {
                 height: 240,
               }}
             >
-              <p>Chart</p>
+              <EventsList />
             </Paper>
           </Grid>
-          {/* Recent Deposits */}
-          <Grid item xs={12} md={4} lg={3}>
+          {/* NEW EVENT FORM */}
+          <Grid item xs={12} md={6} lg={6}>
             <Paper
               sx={{
                 p: 2,
@@ -39,7 +41,7 @@ export default function Main({ children }) {
                 height: 240,
               }}
             >
-              <p>Deposits</p>
+              <EventForm />
             </Paper>
           </Grid>
           {/* Recent Orders */}

@@ -4,7 +4,15 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { AppBar } from './Header.styled';
 import React from 'react';
 
-export default function Header({ isMenuOpened = true, toggleMenu }) {
+interface IHeaderProps {
+  isMenuOpened?: boolean;
+  toggleMenu: () => void;
+}
+
+export default function Header({
+  isMenuOpened = true,
+  toggleMenu,
+}: IHeaderProps): React.ReactElement {
   return (
     <AppBar position="absolute" open={isMenuOpened}>
       <Toolbar

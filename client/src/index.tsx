@@ -7,11 +7,7 @@ import { EventsProvider, Layout } from './modules';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: (
-      <Layout>
-        <h1>Home page</h1>
-      </Layout>
-    ),
+    element: <Layout />,
   },
 ]);
 

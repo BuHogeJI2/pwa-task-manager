@@ -4,7 +4,15 @@ import React from 'react';
 import { Drawer } from './Menu.styled';
 import { mainListItems, secondaryListItems } from './MenuItems';
 
-export default function Menu({ isMenuOpened = true, toggleMenu }) {
+interface IMenuProps {
+  isMenuOpened?: boolean;
+  toggleMenu: () => void;
+}
+
+export default function Menu({
+  isMenuOpened = true,
+  toggleMenu,
+}: IMenuProps): React.ReactElement {
   return (
     <Drawer variant="permanent" open={isMenuOpened}>
       <Toolbar
