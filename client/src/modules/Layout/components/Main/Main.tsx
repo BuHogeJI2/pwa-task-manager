@@ -1,10 +1,10 @@
-import React from 'react';
-import { Box, Container, Grid, Paper, Toolbar } from '@mui/material';
+import React, { PropsWithChildren } from 'react';
+import { Box, Container, Toolbar } from '@mui/material';
 import Copyright from './Copyright';
-import EventsList from '../../../Events/components/EventsList/EventsList';
-import EventForm from '../../../Events/components/EventForm/EventForm';
 
-export default function Main(): React.ReactElement {
+export default function Main({
+  children,
+}: PropsWithChildren): React.ReactElement {
   return (
     <Box
       component="main"
@@ -17,40 +17,7 @@ export default function Main(): React.ReactElement {
     >
       <Toolbar />
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-        <Grid container spacing={3}>
-          {/* EVENTS */}
-          <Grid item xs={12} md={6} lg={6}>
-            <Paper
-              sx={{
-                p: 2,
-                display: 'flex',
-                flexDirection: 'column',
-                height: 240,
-              }}
-            >
-              <EventsList />
-            </Paper>
-          </Grid>
-          {/* NEW EVENT FORM */}
-          <Grid item xs={12} md={6} lg={6}>
-            <Paper
-              sx={{
-                p: 2,
-                display: 'flex',
-                flexDirection: 'column',
-                height: 240,
-              }}
-            >
-              <EventForm />
-            </Paper>
-          </Grid>
-          {/* Recent Orders */}
-          <Grid item xs={12}>
-            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-              <p>Orders</p>
-            </Paper>
-          </Grid>
-        </Grid>
+        {children}
         <Copyright sx={{ pt: 4 }} />
       </Container>
     </Box>
