@@ -1,16 +1,8 @@
 import React, { FormEvent, useState } from 'react';
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Modal,
-  TextField,
-  Typography,
-} from '@mui/material';
-import axios from 'axios';
+import { Button, Container, Grid, TextField } from '@mui/material';
 import { TEvent } from '../../types';
 import { useEventsContext } from '../../context/EventsContext';
+import { SuccessModal } from '../../../Layout/components';
 
 const initialEvent: TEvent = {
   name: '',
@@ -102,36 +94,15 @@ export default function NewEventForm(): React.ReactElement {
           </Grid>
         </form>
       </Container>
-      <Modal
-        open={isEventSaved}
+      <SuccessModal
+        show={isEventSaved}
         onClose={() => {
           setNewEvent(initialEvent);
           setIsEventSaved(false);
         }}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box
-          sx={{
-            position: 'absolute' as 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 400,
-            bgcolor: 'success.light',
-            color: 'common.white',
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Success
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Event {newEvent.name} successfully saved
-          </Typography>
-        </Box>
-      </Modal>
+        title="Success"
+        description={`Event ${newEvent.name} successfully saved!`}
+      />
     </>
   );
 }
