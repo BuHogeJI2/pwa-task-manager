@@ -42,9 +42,11 @@ export default function EventsList() {
   }
 
   function handleDeleteEvent(id: string) {
-    // deleteEvent(id).then(() => {
-    //   getEvents().then(events => setEvents(events));
-    // });
+    deleteEvent(id).then(() => {
+      getEvents()
+        .then(events => setEvents(events))
+        .then(() => setRemoveEventId(undefined));
+    });
   }
 
   if (!events) return null;

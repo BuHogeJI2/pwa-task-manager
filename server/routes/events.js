@@ -60,7 +60,7 @@ router.patch("/:id", getEvent, async (req, res) => {
 // DELETE a specific event
 router.delete("/:id", getEvent, async (req, res) => {
   try {
-    await res.event.remove();
+    await res.event.deleteOne();
     res.json({ message: "Deleted Event" });
   } catch (err) {
     res.status(500).json({ message: err.message });
